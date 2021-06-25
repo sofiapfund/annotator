@@ -13,14 +13,15 @@ os.chdir(dir_path)
 from utils import create_progenetix_posts, upload_publication, jprint
 from my_html import landing_page, form
 
+###################################################################################
+###################################################################################
+###################################################################################
 
 '''
-
 `Progenetix publications annotator`
 Once the server is running, more than one publication can be annotated and will automatically be inserted into
 progenetix.publications. When annotating, follow the instructions provided on the local website.
 After usage, remember to stop the server from running with [ctrl]-c.
-
 '''
 
 hostName = "localhost"
@@ -45,7 +46,6 @@ class MyServer(CGIHTTPRequestHandler):
 
             self.wfile.write(form.encode(encoding='utf_8'))
             return
-
 
     def do_POST(self):
             try:
@@ -81,6 +81,7 @@ class MyServer(CGIHTTPRequestHandler):
             except:
                 pass
 
+###################################################################################
 
 if __name__ == "__main__":
     webServer = HTTPServer((hostName, serverPort), MyServer)
@@ -94,3 +95,7 @@ if __name__ == "__main__":
 
     webServer.server_close()
     print("Server stopped.")
+    
+###################################################################################
+###################################################################################
+###################################################################################
